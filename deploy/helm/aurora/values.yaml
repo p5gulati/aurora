@@ -245,10 +245,10 @@ server:
       # hangs. "http" = GET /health/liveness, which needs a free gunicorn
       # thread, so a pod saturated by an alert burst is restarted after
       # failureThreshold x periodSeconds instead of being left to drain.
-      type: tcp
-      periodSeconds: 20
-      timeoutSeconds: 10
-      failureThreshold: 6
+      type: http
+      periodSeconds: 5
+      timeoutSeconds: 1
+      failureThreshold: 1
 
 # ------------------------------------------------------------------------------
 # Extra environment variables (for marketplace metering, custom integrations, etc.)
